@@ -1,0 +1,65 @@
+<!DOCTYPEhtml>
+<html lang="en">
+
+<head>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+<meta charset="UTF-8">
+<title>Georgian Cycling Accident Database</title>
+</head>
+
+<body>
+    <h1 style="color:#29AD22">Georgian Cycling Accident Database</h1></br>
+
+<p>This database has been built with the intention to map and store information about the location and details of traffic related accidents that occur to cyclists in Tbilisi and all around Georgia. It is a social initiative that everyone can contribute to and the hope is that this data can be use to build cycling infrastructure in the places it is needed most.</p></br>
+<p> Please only submit accurate information. Good data is accurate data.</p></br>
+
+<div>
+<form>
+<form action="process.php" method="post">
+
+<label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br></br>
+
+<label for="age">Age:</label><br>
+<input type="text" id="age" age="age"><br></br>
+
+<label for="location">Location of accident:</label><br>
+<input type="text" id="location" location="location"><br></br>
+
+<label for="date">Date of accident:</label><br>
+<input type="date" id="date of accident" date="date"><br></br>
+
+<label for="details">Details about the accident:</label><br>
+<input type="text" id="details" details="details"><br></br>
+
+<label for="report">Police report made?</label><br>
+ <input type="radio" id="yes" name="Report made" value="Yes">
+  <label for="yes">Yes</label><br>
+ <input type="radio" id="no" name="Report made" value="No">
+  <label for="no">No</label><br></br>
+
+<input type="submit"="submit" value="Submit Form"><br></br>
+
+</form>
+</div>
+
+<div id = "map" style = "width:900px; height:580px;"></div>
+<script>
+var mapOptions = {
+   center: [41.69411, 44.83368],
+   zoom: 12
+}
+var map = new L.map('map', mapOptions);
+var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+</script>
+
+
+</body>
